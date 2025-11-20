@@ -1,0 +1,79 @@
+.hero-card {
+  width: 100%;
+  padding: 90px 60px;
+  background: #151521;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  min-height: 450px;
+  flex: 1;
+
+  /* الحالة الأساسية: مخفي في اليسار وشفاف */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* حالة ظهور البطاقة مع التحريك */
+.hero-card.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.left {
+  max-width: 50%;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e6e6e6;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
+h1 {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "bungee", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white; /* مؤشر الكتابة */
+  animation: typing 3s steps(20) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #e6e6e6;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.devices-img {
+  width: 80%;
+  opacity: 0.9;
+}

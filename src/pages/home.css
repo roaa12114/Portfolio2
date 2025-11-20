@@ -1,0 +1,70 @@
+.home-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 40px 60px;
+  background: transparent;
+  box-sizing: border-box;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-wrapper > *:not(.bg-gradient):not(.bg-shape) {
+  position: relative;
+  z-index: 2;
+}
+
+/* خلفية متدرجة */
+.bg-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #b1a088 10%, #4e706b 50%, #7b9c92 90%);
+  opacity: 0.75;
+  pointer-events: none;
+  transition: background 0.6s;
+}
+
+/* أشكال بسيطة SVG */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+  animation: moveShapes 4s ease-in-out infinite alternate;
+}
+
+.bg-shape.shape1 {
+  width: 350px;
+  height: 350px;
+  top: 10%;
+  left: 7%;
+  background: radial-gradient(circle, #0d1d1d 50%, transparent 100%);
+  animation-delay: 0s;
+}
+.bg-shape.shape2 {
+  width: 250px;
+  height: 250px;
+  right: 10%;
+  top: 15%;
+  background: radial-gradient(circle, #4F2915 60%, transparent 100%);
+  animation-delay: 2s;
+}
+.bg-shape.shape3 {
+  width: 400px;
+  height: 180px;
+  bottom: 7%;
+  left: 45%;
+  background: radial-gradient(circle, #0b272a 60%, transparent 100%);
+  animation-delay: 1s;
+}
+
+@keyframes moveShapes {
+  0% { transform: translateY(0) scale(1);}
+  100% { transform: translateY(30px) scale(1.07);}
+}
