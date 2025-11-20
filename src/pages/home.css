@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .home-wrapper > *:not(.bg-gradient):not(.bg-shape) {
   position: relative;
   z-index: 2;

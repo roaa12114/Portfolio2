@@ -1,0 +1,140 @@
+.about-wrapper {
+  width: 100%;
+  padding: 90px 60px;
+  background: #151521;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  min-height: 450px;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+
+  /* الحالة الأساسية: مخفي في اليسار وشفاف */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* حالة ظهور البطاقة مع التحريك */
+.about-wrapper.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.about-img-wrapper {
+  position: relative;
+  margin-left: -40px; /* تخلي الصورة خارج الكارد */
+  margin-top: -40px;  /* تنزلها لتحت شويه زي التصميم */
+  z-index: 10;        /* تخليها فوق الكارد */
+}
+
+/* صندوق الصورة */
+.about-img {
+  position: relative;
+  padding: 12px;
+  border-radius: 30px;
+  background: #111;
+}
+
+/* الفريم اللي حوالين الصورة */
+.about-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border: 2px solid #ff5964;
+  pointer-events: none;
+}
+
+/* الصورة نفسها */
+.about-img img {
+  width: 330px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.about-content {
+  flex: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-content h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.about-content p {
+  color: #c7c7c7;
+  font-size: 1.15em;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.about-details {
+  display: flex;
+  gap: 32px;
+  color: #ddd;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  font-size: 1em;
+}
+
+.about-details span {
+  color: #ff5964;
+  font-weight: bold;
+}
+
+.about-meta {
+  display: flex;
+  gap: 38px;
+  margin-bottom: 26px;
+  font-size: 1.06em;
+}
+
+.hire-btn {
+  background: #ff5964;
+  color: #fff;
+  padding: 12px 38px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(255,89,100,0.09);
+  margin-top: 6px;
+  outline: none;
+  transition: background 0.25s;
+}
+
+.hire-btn:hover {
+  background: #ff3037;
+}
+
+/* Decorative outline and side line (inspired by your screenshot) */
+.about-card {
+  border: 2px solid #ff5964;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+}
+
+.about-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 37px;
+  bottom: 37px;
+  width: 4px;
+  background: #ff5964;
+  border-radius: 2px;
+}

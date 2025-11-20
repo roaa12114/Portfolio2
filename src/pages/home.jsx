@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom"; 
 import "./home.css";   
 import LeftSidebar from "../components/leftSidebar";
 import Hero from "../components/hero.jsx";
@@ -19,7 +20,10 @@ const Home = () => {
         setActiveIndex={setActiveIndex}
       />
 
-      <Hero />
+      {/* هنا المحتوى بيتغير */}
+      <div className="main-content">
+        <Outlet />
+      </div>
 
       <RightSidebar 
         activeIndex={activeIndex} 

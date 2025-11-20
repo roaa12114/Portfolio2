@@ -1,5 +1,6 @@
 import React from "react";
 import "./leftSidebar.css";
+import { NavLink } from "react-router-dom";
 import profileImg from "../assets/images/Untitled-1.jpg";
 import { AiFillHome, AiOutlineUser, AiOutlineProject } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi";
@@ -35,15 +36,18 @@ const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
 
       <nav className="nav-links">
         {links.map((link, index) => (
-          <div
-            key={link.name}
-            className={`nav-item ${activeIndex === index ? "active" : ""}`}
-            onClick={() => setActiveIndex(index)}
-          >
-            {link.icon}
-            {activeIndex === index && <span>{link.name}</span>}
-          </div>
-        ))}
+  <NavLink
+    key={link.name}
+    to={link.name === "home" ? "" : link.name}
+    className={({ isActive }) =>
+      `nav-item ${isActive ? "active" : ""}`
+    }
+    onClick={() => setActiveIndex(index)}
+  >
+    {link.icon}
+    {activeIndex === index && <span>{link.name}</span>}
+  </NavLink>
+))}
       </nav>
     </div>
   );

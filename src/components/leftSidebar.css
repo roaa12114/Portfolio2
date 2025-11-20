@@ -87,6 +87,10 @@
   align-items: center;
   padding-bottom: 40px;
 }
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .nav-item {
   display: flex;
