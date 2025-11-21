@@ -5,6 +5,8 @@ import profileImg from "../assets/images/Untitled-1.jpg";
 import { AiFillHome, AiOutlineUser, AiOutlineProject } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi";
 import { MdOutlineContactMail } from "react-icons/md";
+import { useLocation } from "react-router-dom";
+
 
 const links = [
   { name: "home", icon: <AiFillHome /> },
@@ -16,7 +18,9 @@ const links = [
 
 const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
 
-  const isHomeActive = activeIndex === 0;
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+const isHomeActive = isHomePage;
 
   return (
     <div className={`left-sidebar ${isHomeActive ? "expanded" : ""}`}>
@@ -38,7 +42,7 @@ const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
         {links.map((link, index) => (
   <NavLink
     key={link.name}
-    to={link.name === "home" ? "" : link.name}
+    to={link.name === "home" ? "/" : `/${link.name}`}
     className={({ isActive }) =>
       `nav-item ${isActive ? "active" : ""}`
     }
