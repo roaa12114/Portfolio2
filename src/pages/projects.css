@@ -1,0 +1,135 @@
+.projects-wrapper {
+  width: 100%;
+  padding: 50px 60px;
+  background: #151521;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 625px;
+  box-sizing: border-box;
+
+  /* Main case -> hidden */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.2s ease, transform 0.8s ease;
+}
+
+/* Slide-in animation */
+.projects-wrapper.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Static Search Bar */
+.bar {
+  width: 95%;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 30px;
+  color: #151521;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+  font-family: 'Lilita One', cursive;
+}
+
+/* Cards layout */
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  padding: 5px;
+  flex: 1;              /* يأخذ باقي المساحة */
+  overflow-y: auto;  
+  padding-right: 20px; 
+}
+
+.cards::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: #4f6bff;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+/* Card Style */
+.project-card {
+  background: #cca011;
+  border-radius: 15px;
+  padding: 15px;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: fill;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.project-card p {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+/* Card content layout */
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.card-content p {
+  flex: 1;
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Buttons style - ثابتة أبيض */
+.icon-btn {
+  background: white;         
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  color: #151521;            
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect */
+.icon-btn:hover {
+  background: #4f6bff;       
+  color: white;               
+  transform: scale(1.1);      
+}

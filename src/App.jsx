@@ -5,6 +5,7 @@ import './App.css'
 import Home from './pages/home.jsx';
 import About from "./pages/about.jsx";
 import Hero from "./components/hero.jsx"; 
+import Projects from './pages/projects.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}>
             <Route index element={<Hero />} />
             <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
         </Route>
       </Routes>
     </Router>

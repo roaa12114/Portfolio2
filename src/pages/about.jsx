@@ -21,7 +21,7 @@ const About = () => {
         </div>
         <div className="about-content">
           <h1>
-            About me <br /> 
+            About me 
           </h1>
            <p>
             I'm a web designer who aware of the tiny moments in a persons life that reveal greater truths. Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum. Integer dapibus ullamcorper est, ac.
