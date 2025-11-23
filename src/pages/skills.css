@@ -1,24 +1,168 @@
+/* MAIN WRAPPER - زي ما طلبتي محفوظ ✅ */
 .skills-wrapper {
   width: 100%;
-  padding: 90px 60px;
+  padding: 10px 60px;
   background: #151521;
   border-radius: 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: white;
-  min-height: 450px;
+  height: 610px;
   gap: 70px;
   flex: 1;
 
-  /*main case -> hidden */
   opacity: 0;
   transform: translateX(-100px);
-  transition: opacity 0.2s ease, transform 0.8s ease;
+  transition: opacity 0.4s ease, transform 0.8s ease;
 }
 
-/* while moving */
+/* animation active */
 .skills-wrapper.slide-in {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* infographic container */
+.infographic-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main wrap */
+.infographic-wrapper {
+  position: relative;
+  width: 520px;
+  height: 520px;
+}
+
+/* CENTER CIRCLE */
+.center-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid #cb8383;
+  background: white;
+  position: absolute;
+  left: -160px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.center-content {
+  padding: 10px;
+}
+
+.center-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #cb8383;
+}
+
+.center-main {
+  font-size: 28px;
+  font-weight: 700;
+  color: #151521;
+  margin: 5px 0;
+}
+
+.center-text {
+  font-size: 13px;
+  color: #555;
+}
+
+/* SVG ARC */
+.arc-svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: -250px;
+}
+
+.arc-path {
+  stroke: #cb8383;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* RIGHT ITEMS */
+.items-wrapper {
+  position: absolute;
+  right: -200px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 20px;
+}
+
+/* single item */
+.info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #1f1f2e;
+  padding: 18px 20px;
+  border-radius: 14px;
+  width: 450px;
+  transition: transform 0.3s;
+}
+
+.info-item:hover {
+  transform: translateX(5px);
+}
+
+
+/* text */
+.info-number {
+  font-size: 18px;
+  color: #cb8383;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.info-item h4 {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+  display: inline;
+}
+
+.info-item p {
+  margin: 2px 0 0;
+  font-size: 16px;
+  color: #ddd6d6;
+}
+
+.arc-dot {
+  fill: #cb8383;
+  stroke: #151521;
+  stroke-width: 2;
+}
+
+.info-item {
+  position: relative;
+}
+
+/* الخط الواصل بين الدائرة والكارت */
+.info-item::before {
+  content: "";
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: #cb8383;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
