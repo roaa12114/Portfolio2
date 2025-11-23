@@ -6,6 +6,8 @@ import Home from './pages/home.jsx';
 import About from "./pages/about.jsx";
 import Hero from "./components/hero.jsx"; 
 import Projects from './pages/projects.jsx';
+import Contact from './pages/contact.jsx';
+import Skills from './pages/skills.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +19,9 @@ function App() {
             <Route index element={<Hero />} />
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact/>} />
+            <Route path="skills" element={<Skills/>} />
+
         </Route>
       </Routes>
     </Router>

@@ -1,0 +1,24 @@
+.skills-wrapper {
+  width: 100%;
+  padding: 90px 60px;
+  background: #151521;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  min-height: 450px;
+  gap: 70px;
+  flex: 1;
+
+  /*main case -> hidden */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.2s ease, transform 0.8s ease;
+}
+
+/* while moving */
+.skills-wrapper.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
