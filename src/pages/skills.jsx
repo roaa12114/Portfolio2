@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./skills.css";
+import skillsimg from "../assets/images/skills.jpg"
+import { MdOpacity } from "react-icons/md";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,8 +10,17 @@ const Skills = () => {
     setIsVisible(true);
   }, []);
 
+   const wrapperStyle = {
+    backgroundImage: `url(${skillsimg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
+
   return (
-    <div className={`skills-wrapper ${isVisible ? "slide-in" : ""}`}>
+    <div className={`skills-wrapper ${isVisible ? "slide-in" : ""}`}
+     style={wrapperStyle}
+     >
       <div className="infographic-container">
         <div className="infographic-wrapper">
           <div className="center-circle">
