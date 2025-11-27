@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  min-height: 450px;
+  height: 625px;
   flex: 1;
 
   /* الحالة الأساسية: مخفي في اليسار وشفاف */
@@ -76,4 +76,82 @@ h2 {
 .devices-img {
   width: 80%;
   opacity: 0.9;
+    object-fit: contain;
+
 }
+/* Tablet / medium screens */
+/* Tablet / medium screens */
+@media (max-width: 992px) {
+  .hero-card {
+    flex-direction: column;
+    padding: 30px 40px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+  }
+  .left {
+    max-width: 100%;
+  }
+  .right {
+    width: 100%;
+    margin-top: 20px;
+  }
+  h1 {
+    white-space: normal; /* avoid overflow */
+    border-right: none;
+    animation: none;
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .devices-img {
+    width: 70%;
+    max-width: 400px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 576px) {
+  .hero-card {
+    margin-top: 50px;
+    padding: 5px 16px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  .devices-img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .hero-card {
+    padding: 20px 12px;
+  }
+  .role {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  .devices-img {
+    max-width: 260px;
+  }
+}
+
+    @media (max-width: 1100px) {
+  h1 {
+ white-space: normal; /* يسمح للنص بالالتفاف */
+    font-size: 32px;  
+  
+  }
+    }

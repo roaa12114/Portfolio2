@@ -30,7 +30,7 @@ const projectsData = [
     id: 3,
     title: "Notes Web Application",
     desc: "A full-stack note-taking app that allows users to create, edit, and delete notes.",
-    image: project3,
+    image: project4,
     viewLink: "#",
     githubLink: "https://github.com/roaa12114/Note-app"
   },
@@ -38,7 +38,7 @@ const projectsData = [
     id: 4,
     title: "Chat Application",
     desc: "A real-time client–server chat app using multithreading and TCP sockets.",
-    image: project4,
+    image: project3,
     viewLink: "#",
     githubLink: "https://github.com/roaa12114/Chat-application"
   },

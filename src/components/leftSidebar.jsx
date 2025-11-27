@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./leftSidebar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import profileImg from "../assets/images/Untitled-1.jpg";
 import { AiFillHome, AiOutlineUser, AiOutlineProject } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi";
 import { MdOutlineContactMail } from "react-icons/md";
-import { useLocation } from "react-router-dom";
-
 
 const links = [
   { name: "home", icon: <AiFillHome /> },
@@ -17,43 +15,54 @@ const links = [
 ];
 
 const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-const isHomeActive = isHomePage;
+  const isHomeActive = isHomePage;
 
   return (
-    <div className={`left-sidebar ${isHomeActive ? "expanded" : ""}`}>
-      <div className="profile-section">
-        <div className="profile-image">
-          <img src={profileImg} alt="profile" />
+    <>
+      {/* زر الموبايل */}
+      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        ☰
+      </button>
+
+      <div className={`left-sidebar ${isOpen ? "open" : ""} ${isHomeActive ? "expanded" : ""}`}>
+        <div className="profile-section">
+          <div className="profile-image">
+            <img src={profileImg} alt="profile" />
+          </div>
+
+          <h2 className="name">{isHomeActive ? "Roaa Ahmed" : ""}</h2>
+
+          {isHomeActive && (
+            <div className="download-btn">
+              <button>Download CV</button>
+            </div>
+          )}
         </div>
 
-        <h2 className="name">{isHomeActive ? "Roaa Ahmed" : ""}</h2>
-
-        {isHomeActive && (
-          <div className="download-btn">
-            <button>Download CV</button>
-          </div>
-        )}
+        <nav className="nav-links">
+          {links.map((link, index) => (
+            <NavLink
+              key={link.name}
+              to={link.name === "home" ? "/" : `/${link.name}`}
+              className={({ isActive }) =>
+                `nav-item ${isActive ? "active" : ""}`
+              }
+              onClick={() => {
+                setActiveIndex(index);
+                setIsOpen(false); // يقفل السايد بار بعد الضغط
+              }}
+            >
+              {link.icon}
+              {activeIndex === index && <span>{link.name}</span>}
+            </NavLink>
+          ))}
+        </nav>
       </div>
-
-      <nav className="nav-links">
-        {links.map((link, index) => (
-  <NavLink
-    key={link.name}
-    to={link.name === "home" ? "/" : `/${link.name}`}
-    className={({ isActive }) =>
-      `nav-item ${isActive ? "active" : ""}`
-    }
-    onClick={() => setActiveIndex(index)}
-  >
-    {link.icon}
-    {activeIndex === index && <span>{link.name}</span>}
-  </NavLink>
-))}
-      </nav>
-    </div>
+    </>
   );
 };
 

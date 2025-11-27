@@ -1,9 +1,12 @@
 /* ===============================
    CONTACT MAIN CARD
 ================================ */
+* {
+  box-sizing: border-box;
+}
+
 .contact-card {
   width: 100%;
-  padding: 0px;
   background: #151521;
   border-radius: 25px;
   color: white;
@@ -14,13 +17,11 @@
   display: flex;
   flex-direction: column;
 
-  /* Animation state */
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Visible Animation */
 .contact-card.slide-in {
   opacity: 1;
   transform: translateX(0);
@@ -32,10 +33,11 @@
 .contact-up {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 58%;
+  overflow: hidden;
 }
 
-/* Image left */
 .contact-image {
   width: 50%;
   height: 100%;
@@ -45,54 +47,51 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
-  border-radius: 0 18px  0 0;
+  border-radius: 0 18px 0 0;
   filter: brightness(87%);
-
 }
 
-/* Title right */
 .title-wrapper {
   width: 50%;
-  padding-left: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .get {
   font-size: 70px;
-  margin-top: -10px;
-  margin-left: 55px;
+  margin: 0;
 }
 
 .touch {
   font-size: 70px;
-  margin-top: -75px;
-  margin-left: 55px;
+  margin: -10px 0 0 0;
 }
 
 /* ===============================
    BOTTOM SECTION
 ================================ */
 .contact-down {
-  margin: 40px;
+  margin: 30px 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 15px;
 }
 
-/* Contact Boxes */
 .contact-box {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
   height: 110px;
-  padding: 30px 35px;
+  padding: 20px;
   font-size: 18px;
-  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .contact-box:hover {
@@ -121,38 +120,87 @@
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
 ================================ */
-@media (max-width: 900px) {
 
+/* ================= 1350px ================= */
+@media (max-width: 1350px) {
+  
+  .get, .touch {
+    font-size: 40px;
+  }
+}
+
+/* ================= 1050px ================= */
+@media (max-width: 1050px) {
   .contact-card {
-    padding: 40px 20px;
+    height: 620px;
+    padding: 20px;
   }
 
   .contact-up {
     flex-direction: column;
+    height: auto;
     text-align: center;
   }
 
-  .contact-image,
   .title-wrapper {
     width: 100%;
-  }
+        padding: 20px 10px;
 
-  .title-wrapper {
-    padding-left: 0;
-    margin-top: 20px;
-  }
-
-  .contact-down {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .get {
-    font-size: 55px;
+    font-size: 60px;
   }
 
   .touch {
-    font-size: 45px;
+    font-size: 60px;
+    margin-top: -40px;
+  }
+
+  .contact-image{
+    display: none;
+  }
+  .contact-down {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 768px) {
+  .contact-card {
+    height: 500px;
+    padding: 20px;
+  }
+  .get {
+    font-size: 42px;
+  }
+
+  .touch {
+    font-size: 42px;
+  }
+
+  .contact-box {
+    height: 95px;
+    font-size: 16px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .contact-card {
+    height: 550px;
+    padding: 20px;
+    margin-top: 30px;
+  }
+  .contact-down {
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+  }
+
+  .get, .touch {
+    font-size: 30px;
   }
 }

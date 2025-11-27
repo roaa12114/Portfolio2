@@ -1,6 +1,6 @@
 .left-sidebar {
   width: 80px;
-  height: 77vh;
+  height: 625px;
   background: #151521;
  border-radius: 20px;
   color: white;
@@ -16,6 +16,8 @@
 .left-sidebar.expanded {
   width: 240px; 
 }
+
+.left-sidebar.compact { width: 100px; }
 
 .profile-image img {
   width: 50px;
@@ -123,3 +125,74 @@
   color: #cb8383;
 }
 
+/* hide name / download on compact */
+.left-sidebar.compact .name,
+.left-sidebar.compact .download-btn { display: none; }
+
+/* nav icons center, smaller icons on compact */
+.left-sidebar .nav-links { margin-top: 30px; display:flex; flex-direction:column; gap: 24px; }
+.left-sidebar.compact .nav-links { gap: 20px; }
+.left-sidebar .nav-item { font-size: 22px; display:flex; align-items:center; gap:10px; }
+.left-sidebar .nav-item span { display:inline-block; margin-left:8px; }
+
+/* on compact hide the label text */
+.left-sidebar.compact .nav-item span { display:none; }
+
+/* mobile toggle button */
+.menu-toggle {
+  position: fixed;
+  left: 16px;
+  top: 14px;
+  z-index: 80;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #151521;
+  border: 2px solid #cb8383;
+  color: #cb8383;
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; align-items:center; justify-content:center; }
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 999;
+  background: #12131d;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* الوضع الطبيعي للديسكتوب */
+.left-sidebar {
+  transition: transform 0.4s ease;
+}
+
+/* ========== موبايل ========= */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 998;
+  }
+
+  .left-sidebar.open {
+    transform: translateX(0);
+  }
+}

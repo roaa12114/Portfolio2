@@ -15,6 +15,10 @@ const Home = () => {
       <div className="bg-shape shape2"></div>
       <div className="bg-shape shape3"></div>
       
+
+       {/* LAYOUT */}
+      <div className="home-layout">
+
       <LeftSidebar 
         activeIndex={activeIndex} 
         setActiveIndex={setActiveIndex}
@@ -29,6 +33,7 @@ const Home = () => {
         activeIndex={activeIndex} 
         setActiveIndex={setActiveIndex}
       />
+    </div>
     </div>
   );
 };

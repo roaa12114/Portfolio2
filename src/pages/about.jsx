@@ -7,8 +7,9 @@ const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const timer = setTimeout(() => setIsVisible(true), 100);
+  return () => clearTimeout(timer);
+}, []);
 
   return (
     <div className={`about-wrapper ${isVisible ? "slide-in" : ""}`}>
@@ -23,6 +24,7 @@ const About = () => {
           <h1>
             About me 
           </h1>
+          <div className="about-scroll">
            <p>
             I'm a web designer who aware of the tiny moments in a persons life that reveal greater truths. Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum. Integer dapibus ullamcorper est, ac.
           </p>
@@ -37,6 +39,7 @@ const About = () => {
             <div>
               <span>City :</span> Cairo, EGYPT
             </div>
+          </div>
           </div>
         </div>
       </div>

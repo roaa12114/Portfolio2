@@ -23,17 +23,23 @@
 
 /* Static Search Bar */
 .bar {
-  width: 95%;
+  width: 80%;
   margin-bottom: 30px;
-  background: white;
-  padding: 20px 25px;
-  border-radius: 30px;
-  color: #151521;
-  font-size: 25px;
-  font-weight: bold;
+  background:transparent;
+  padding: 10px 0px;
+  border-radius: 0px;
+  border: 3px solid white;
+  color: white;
+  font-size: 30px;
   text-align: center;
   cursor: default;
-  font-family: 'Lilita One', cursive;
+  font-family: "bungee", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white; /* مؤشر الكتابة */
+  animation: typing 3s steps(20) forwards;
 }
 
 /* Cards layout */
@@ -132,4 +138,73 @@
   background: #4f6bff;       
   color: white;               
   transform: scale(1.1);      
+}
+
+/* ========== TABLET ========== */
+@media (max-width: 992px) {
+  .projects-wrapper {
+    padding: 40px 30px;
+    margin-left: 20px;
+  }
+
+  .bar {
+    font-size: 26px;
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 120px;
+  }
+
+  .project-card h3 {
+    font-size: 16px;
+  }
+
+  .project-card p {
+    font-size: 12px;
+  }
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 576px) {
+  .projects-wrapper {
+    padding: 25px 15px;
+  }
+
+  .bar {
+    font-size: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-card img {
+    height: 100px;
+  }
+
+  .project-card h3 {
+    font-size: 14px;
+  }
+
+  .project-card p {
+    font-size: 11px;
+  }
+
+  .buttons-container {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
 }
