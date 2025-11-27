@@ -27,10 +27,34 @@ const Contact = () => {
   </div>
 
   <div className="contact-down">
-    <div className="contact-box"><FaLinkedin /> LinkedIn</div>
-    <div className="contact-box"><MdEmail /> Email </div>
-    <div className="contact-box"><FaPhoneAlt /> Phone</div>
-    <div className="contact-box"><FaGithub /> GitHub</div>
+    <a 
+      href="https://www.linkedin.com/in/roaa-ahmed-566a82235/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-box"
+    >
+        <FaLinkedin /> LinkedIn
+    </a>
+    <a
+    href="roaa12114@gmail.com"
+    className="contact-box link-btn"
+    >
+      <MdEmail /> Email
+    </a>
+    <a
+    href="tel:+201505822797"
+    className="contact-box link-btn"
+    >
+      <FaPhoneAlt /> Phone
+    </a>
+    <a
+    href="https://github.com/roaa12114"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="contact-box link-btn"
+    >
+      <FaGithub /> GitHub
+    </a>
   </div>
 
 </div>
