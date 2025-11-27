@@ -58,7 +58,7 @@
   color: white;
 }
 
-.settings {
+/*.settings {
   width: 42px;
   height: 42px;
   border-radius: 12px;
@@ -75,7 +75,7 @@
 .settings:hover {
   background: #ff6b6b;
   color: white;
-}
+}*/
 
 /* tablet: shrink it */
 @media (max-width: 992px) {

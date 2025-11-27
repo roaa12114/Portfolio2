@@ -47,9 +47,7 @@ const RightSidebar = ({ activeIndex, setActiveIndex }) => {
         <button className="circle-btn" onClick={handleUp}>&#x2191;</button>
         <button className="circle-btn" onClick={handleDown}>&#x2193;</button>
 
-        <div className="settings">
-          <FiSettings size={22} />
-        </div>
+        
       </div>
 
     </div>
