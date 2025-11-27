@@ -21,7 +21,7 @@ const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
 
 
   const handleDownloadCV = () => {
-  window.open("/public/Roaa_Shawky_CV.pdf", "_blank");
+  window.open(process.env.PUBLIC_URL + "/Roaa_Shawky_CV.pdf", "_blank");
 };
 
 
