@@ -24,7 +24,7 @@ const Home = () => {
         setActiveIndex={setActiveIndex}
       />
 
-      {/* هنا المحتوى بيتغير */}
+      
       <div className="main-content">
         <Outlet />
       </div>

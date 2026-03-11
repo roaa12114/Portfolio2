@@ -1,22 +1,22 @@
 .about-wrapper {
   width: 100%;
-  padding: 90px 60px;
+  padding: 60px 60px;
   background: #151521;
   border-radius: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 625px;               /* ✅ طول ثابت */
+  min-height: 625px;
   gap: 70px;
-  overflow: hidden;            /* ✅ يمنع التمدد بالطول */
 
   opacity: 0;
   transform: translateX(-100px);
-  transition: opacity 0.6s ease, transform 0.8s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s ease;
 }
 
-/* while moving */
 .about-wrapper.slide-in {
   opacity: 1;
   transform: translateX(0);
@@ -29,7 +29,6 @@
   align-items: center;
 }
 
-/* back border */
 .about-img-frame {
   position: relative;
   border-radius: 30px;
@@ -47,8 +46,6 @@
   z-index: 1;
 }
 
-
-
 .about-img img {
   width: 320px;
   height: 370px;
@@ -64,17 +61,14 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  height: 100%;
-  min-height: 0;  
-  padding-top: 100px;
-  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-
 .about-scroll {
-  overflow-y: hidden;
-  flex: 1;
-  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .about-content h1 {
@@ -85,28 +79,30 @@
   font-family: "bungee", sans-serif;
   font-weight: 800;
   font-style: normal;
-
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #151521; /* مؤشر الكتابة */
+  border-right: 3px solid #151521;
   animation: typing 3s steps(8) forwards;
 }
 
-/* أنيميشن الكتابة */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 8ch; }   /* عدد حروف About me */
+  from {
+    width: 0;
+  }
+  to {
+    width: 8ch;
+  }
 }
 
-/* وميض المؤشر */
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
-
 
 .about-content p {
   color: #c7c7c7;
-  font-size: 1.15em;
+  font-size: 1em;
   margin-bottom: 14px;
   line-height: 1.6;
 }
@@ -132,7 +128,6 @@
   font-size: 1.06em;
 }
 
-
 /* ========== TABLET ========== */
 @media (max-width: 992px) {
   .about-wrapper {
@@ -142,6 +137,7 @@
     gap: 25px;
     text-align: center;
   }
+
   .about-img img {
     width: 250px;
     height: 280px;
@@ -154,20 +150,9 @@
   }
 
   .about-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 10px;
-  padding-top: 20px;
-}
-
-  .about-scroll {
-  overflow-y: auto; 
-  flex: 1 1 auto;
-  max-height: 100%; 
-  padding-right: 10px;
-}
-
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
 }
 
 /* ========== MOBILE ========== */
@@ -203,4 +188,3 @@
     bottom: 15px;
   }
 }
-

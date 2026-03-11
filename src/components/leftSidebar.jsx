@@ -14,16 +14,12 @@ const links = [
   { name: "contact", icon: <MdOutlineContactMail /> },
 ];
 
-
-
 const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-
   const handleDownloadCV = () => {
-  window.open("/Roaa_Shawky_CV.pdf", "_blank");
-};
-
+    window.open("/Roaa_Shawky_CV.pdf", "_blank");
+  };
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -36,7 +32,11 @@ const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
         ☰
       </button>
 
-      <div className={`left-sidebar ${isOpen ? "open" : ""} ${isHomeActive ? "expanded" : ""}`}>
+      <div
+        className={`left-sidebar ${isOpen ? "open" : ""} ${
+          isHomeActive ? "expanded" : ""
+        }`}
+      >
         <div className="profile-section">
           <div className="profile-image">
             <img src={profileImg} alt="profile" />
@@ -46,9 +46,7 @@ const LeftSidebar = ({ activeIndex, setActiveIndex }) => {
 
           {isHomeActive && (
             <div className="download-btn">
-              <button onClick={handleDownloadCV}>
-                Download CV
-              </button>
+              <button onClick={handleDownloadCV}>Download CV</button>
             </div>
           )}
         </div>

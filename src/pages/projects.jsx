@@ -16,7 +16,7 @@ const projectsData = [
     desc: "An interactive e-commerce platform for furniture shopping, featuring 3D product visualization and a responsive user interface. Users can browse, view 3D models, and authenticate securely using JWT.",
     image: project1,
     viewLink: "https://3-d-furniture.vercel.app/",
-    githubLink: "https://github.com/roaa12114/3D-Furniture"
+    githubLink: "https://github.com/roaa12114/3D-Furniture",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const projectsData = [
     desc: "A sneakers e-commerce website built with React and Firebase, featuring user authentication, real-time Firestore database, and cloud hosting. The design emphasizes responsiveness and scalability.",
     image: project2,
     viewLink: "https://sneakzone-c56f7.web.app/",
-    githubLink: "https://github.com/roaa12114/sneakzone-ecommerce"
+    githubLink: "https://github.com/roaa12114/sneakzone-ecommerce",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const projectsData = [
     desc: "A full-stack note-taking app that allows users to create, edit, and delete notes.",
     image: project4,
     viewLink: "#",
-    githubLink: "https://github.com/roaa12114/Note-app"
+    githubLink: "https://github.com/roaa12114/Note-app",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const projectsData = [
     desc: "A real-time client–server chat app using multithreading and TCP sockets.",
     image: project3,
     viewLink: "#",
-    githubLink: "https://github.com/roaa12114/Chat-application"
+    githubLink: "https://github.com/roaa12114/Chat-application",
   },
   {
     id: 5,
@@ -48,7 +48,8 @@ const projectsData = [
     desc: "A browser-based guessing game built with modular JavaScript.",
     image: project5,
     viewLink: "https://guess-the-word-game-hangaroo-clone.vercel.app/",
-    githubLink: "https://github.com/roaa12114/Guess-the-Word-Game---Hangaroo-Clone"
+    githubLink:
+      "https://github.com/roaa12114/Guess-the-Word-Game---Hangaroo-Clone",
   },
   {
     id: 6,
@@ -56,8 +57,8 @@ const projectsData = [
     desc: "An interactive JavaScript-based mini-game with real-time score tracking.",
     image: project6,
     viewLink: "https://rock-paper-scissor-game-tawny-gamma.vercel.app/",
-    githubLink: "https://github.com/roaa12114/Rock-Paper-Scissor-Game"
-  }
+    githubLink: "https://github.com/roaa12114/Rock-Paper-Scissor-Game",
+  },
 ];
 
 const Projects = () => {
@@ -69,7 +70,7 @@ const Projects = () => {
 
   return (
     <div className={`projects-wrapper ${isVisible ? "slide-in" : ""}`}>
-      <div className="bar">Projects I did before</div>
+      <div className="bar">Projects</div>
 
       <div className="cards">
         {projectsData.map((project) => (
@@ -85,7 +86,9 @@ const Projects = () => {
                   <button
                     className="icon-btn"
                     onClick={() =>
-                      alert(`🚧 The live demo for "${project.title}" is not available yet.`)
+                      alert(
+                        `🚧 The live demo for "${project.title}" is not available yet.`,
+                      )
                     }
                   >
                     <FaArrowUpRightFromSquare />
@@ -110,7 +113,6 @@ const Projects = () => {
                   <FaGithub />
                 </a>
               </div>
-
             </div>
           </div>
         ))}
